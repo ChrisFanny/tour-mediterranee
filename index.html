@@ -5,7 +5,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Feuille de style Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
     #map {
@@ -18,18 +17,14 @@
 
 <div id="map"></div>
 
-<!-- Script Leaflet -->
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-  // Initialisation de la carte
   var map = L.map('map').setView([38.5, 15.0], 5);
 
-  // Fond de carte
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
-  // Icône personnalisée (ancre)
   var iconeEscale = L.icon({
     iconUrl: 'https://cdn-icons-png.flaticon.com/512/69/69524.png',
     iconSize: [25, 25],
@@ -37,7 +32,6 @@
     popupAnchor: [0, -25]
   });
 
-  // Tracé de la route
   var route = [
     [43.879411, 8.027154], [43.848084, 7.970238], [43.814402, 7.834969], [43.815571, 7.787633],
     [43.793201, 7.739439], [43.772271, 7.675323], [43.780179, 7.556695], [43.779874, 7.555488],
@@ -55,7 +49,6 @@
     opacity: 0.8
   }).addTo(map);
 
-  // Données des escales
   var escales = [
     { coords: [43.879411, 8.027154], nom: "Imperia, Italie", date: "29 avril 2025" },
     { coords: [43.815571, 7.787633], nom: "Port de Sanremo, Italie", date: "2 mai 2025" },
@@ -69,15 +62,13 @@
     { coords: [42.679481, 9.299814], nom: "Port de Saint Florent", date: "11 juin 2025" }
   ];
 
-  // Marqueurs + popups
   escales.forEach(function(escale) {
     var contenu = `<b>${escale.nom}</b><br><span style="color:gray;">📅 ${escale.date}</span>`;
-    L.marker(escale.coords, { icon: iconeEscale }).addTo(map)
-      .bindPopup(contenu);
+    L.marker(escale.coords, { icon: iconeEscale }).addTo(map).bindPopup(contenu);
   });
 
-  // Centrage automatique
   map.fitBounds(polyline.getBounds());
 </script>
+
 </body>
 </html>
