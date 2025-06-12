@@ -85,9 +85,13 @@
   ];
 
   escales.forEach(function(escale) {
-    L.marker(escale.coords).addTo(map)
-      .bindPopup(escale.nom);
-  });
+  var contenu = `
+    <b>${escale.nom}</b><br>
+    <span style="color:gray;">📅 ${escale.date}</span>
+  `;
+  L.marker(escale.coords).addTo(map)
+    .bindPopup(contenu);
+});
 
   // Ajuster la vue à la route
   map.fitBounds(polyline.getBounds());
