@@ -29,6 +29,14 @@
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
+  // Définir une icône d'ancre
+  var iconeEscale = L.icon({
+    iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Anchor_icon.svg/32px-Anchor_icon.svg.png',
+    iconSize: [25, 25],
+    iconAnchor: [12, 25],
+    popupAnchor: [0, -25]
+  });
+
   // Étapes du tour de Méditerranée
   var route = [
     [43.879411, 8.027154],     // Imperia
@@ -83,14 +91,12 @@
   { coords: [42.679481, 9.299814], nom: "Port de Saint Florent", date: "8 mai 2025" }
 ];
 
+ // Marqueurs personnalisés avec popup
   escales.forEach(function(escale) {
-  var contenu = `
-    <b>${escale.nom}</b><br>
-    <span style="color:gray;">📅 ${escale.date}</span>
-  `;
-  L.marker(escale.coords).addTo(map)
-    .bindPopup(contenu);
-});
+    var contenu = `<b>${escale.nom}</b><br><span style="color:gray;">📅 ${escale.date}</span>`;
+    L.marker(escale.coords, { icon: iconeEscale }).addTo(map)
+      .bindPopup(contenu);
+  });
 
   // Ajuster la vue à la route
   map.fitBounds(polyline.getBounds());
