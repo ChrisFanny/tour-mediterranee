@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tour de Méditerranée en voilier</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Feuille de style Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Script Leaflet -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  // Initialisation de la carte
+  var map = L.map('map').setView([38.5, 15.0], 5);
+
+  // Fond de carte (OpenStreetMap)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Étapes du tour de Méditerranée
+  var route = [
+    [43.2965, 5.3698],     // Marseille
+    [41.9186, 8.7386],     // Ajaccio
+    [40.8518, 14.2681],    // Naples
+    [38.1157, 13.3615],    // Palerme
+    [37.9838, 23.7275],    // Athènes
+    [36.8000, 27.1333],    // Kos
+    [36.8663, 30.7056],    // Antalya
+    [35.8997, 14.5146],    // La Valette (Malte)
+    [36.8188, 10.1658],    // Tunis
+    [43.2965, 5.3698]      // Retour Marseille
+  ];
+
+  // Tracé de la route
+  var polyline = L.polyline(route, {
+    color: 'red',
+    weight: 4,
+    opacity: 0.8
+  }).addTo(map);
+
+  // Marqueurs avec noms
+  var escales = [
+    { coords: [43.2965, 5.3698], nom: "Départ / Arrivée : Marseille" },
+    { coords: [41.9186, 8.7386], nom: "Ajaccio" },
+    { coords: [40.8518, 14.2681], nom: "Naples" },
+    { coords: [38.1157, 13.3615], nom: "Palerme" },
+    { coords: [37.9838, 23.7275], nom: "Athènes" },
+    { coords: [36.8000, 27.1333], nom: "Kos" },
+    { coords: [36.8663, 30.7056], nom: "Antalya" },
+    { coords: [35.8997, 14.5146], nom: "La Valette (Malte)" },
+    { coords: [36.8188, 10.1658], nom: "Tunis" }
+  ];
+
+  escales.forEach(function(escale) {
+    L.marker(escale.coords).addTo(map)
+      .bindPopup(escale.nom);
+  });
+
+  // Ajuster la vue à la route
+  map.fitBounds(polyline.getBounds());
+</script>
+
+</body>
+</html>
