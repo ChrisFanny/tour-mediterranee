@@ -25,14 +25,6 @@
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
-  // Nouvelle icône : ancre marine
-  var iconeEscale = L.icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/854/854894.png',
-    iconSize: [25, 25],
-    iconAnchor: [12, 25],
-    popupAnchor: [0, -25]
-  });
-
   var route = [
     [43.879411, 8.027154], [43.848084, 7.970238], [43.814402, 7.834969], [43.815571, 7.787633],
     [43.793201, 7.739439], [43.772271, 7.675323], [43.780179, 7.556695], [43.779874, 7.555488],
@@ -65,7 +57,7 @@
 
   escales.forEach(function(escale) {
     var contenu = "<b>" + escale.nom + "</b><br><span style='color:gray;'>Date : " + escale.date + "</span>";
-    L.marker(escale.coords, { icon: iconeEscale }).addTo(map).bindPopup(contenu);
+    L.marker(escale.coords).addTo(map).bindPopup(contenu);
   });
 
   map.fitBounds(polyline.getBounds());
