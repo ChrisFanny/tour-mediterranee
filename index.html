@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tour de Méditerranée en voilier</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour de Méditerranée en voilier</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <style>
-    #map {
-      height: 100vh;
-      width: 100%;
-    }
-  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
 
@@ -19,55 +19,55 @@
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-  var map = L.map('map').setView([38.5, 15.0], 5);
+  var map = L.map('map').setView([38.5, 15.0], 5);
 
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
-  }).addTo(map);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
 
-  var iconeEscale = L.icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/69/69524.png',
-    iconSize: [25, 25],
-    iconAnchor: [12, 25],
-    popupAnchor: [0, -25]
-  });
+  var iconeEscale = L.icon({
+    iconUrl: 'https://cdn-icons-png.flaticon.com/512/69/69524.png',
+    iconSize: [25, 25],
+    iconAnchor: [12, 25],
+    popupAnchor: [0, -25]
+  });
 
-  var route = [
-    [43.879411, 8.027154], [43.848084, 7.970238], [43.814402, 7.834969], [43.815571, 7.787633],
-    [43.793201, 7.739439], [43.772271, 7.675323], [43.780179, 7.556695], [43.779874, 7.555488],
-    [43.777532, 7.512288], [43.776916, 7.513940], [43.747584, 7.491131], [43.673700, 7.325907],
-    [43.699623, 7.310854], [43.668461, 7.324791], [43.669610, 7.583313], [43.808463, 8.104284],
-    [43.879411, 8.027154], [43.888162, 8.068321], [43.953220, 8.180008], [43.970700, 8.166661],
-    [43.951490, 8.190651], [43.886105, 8.068943], [43.879411, 8.027154],
-    [42.966040, 9.349612], [42.967909, 9.348335], [42.965585, 9.338593], [42.838087, 9.289627],
-    [42.679481, 9.299814]
-  ];
+  var route = [
+    [43.879411, 8.027154], [43.848084, 7.970238], [43.814402, 7.834969], [43.815571, 7.787633],
+    [43.793201, 7.739439], [43.772271, 7.675323], [43.780179, 7.556695], [43.779874, 7.555488],
+    [43.777532, 7.512288], [43.776916, 7.513940], [43.747584, 7.491131], [43.673700, 7.325907],
+    [43.699623, 7.310854], [43.668461, 7.324791], [43.669610, 7.583313], [43.808463, 8.104284],
+    [43.879411, 8.027154], [43.888162, 8.068321], [43.953220, 8.180008], [43.970700, 8.166661],
+    [43.951490, 8.190651], [43.886105, 8.068943], [43.879411, 8.027154],
+    [42.966040, 9.349612], [42.967909, 9.348335], [42.965585, 9.338593], [42.838087, 9.289627],
+    [42.679481, 9.299814]
+  ];
 
-  var polyline = L.polyline(route, {
-    color: 'red',
-    weight: 4,
-    opacity: 0.8
-  }).addTo(map);
+  var polyline = L.polyline(route, {
+    color: 'red',
+    weight: 4,
+    opacity: 0.8
+  }).addTo(map);
 
-  var escales = [
-    { coords: [43.879411, 8.027154], nom: "Imperia, Italie", date: "29 avril 2025" },
-    { coords: [43.815571, 7.787633], nom: "Port de Sanremo, Italie", date: "2 mai 2025" },
-    { coords: [43.780179, 7.556695], nom: "Mouillage Capo Mortola", date: "3 mai 2025" },
-    { coords: [43.777532, 7.512288], nom: "Menton, Vieux Port", date: "3 mai 2025" },
-    { coords: [43.699623, 7.310854], nom: "Villefranche-sur-Mer", date: "4 mai 2025" },
-    { coords: [43.879411, 8.027154], nom: "Imperia (retour)", date: "29 avril 2025" },
-    { coords: [43.970700, 8.166661], nom: "Mouillage Capo Mele", date: "10 mai 2025" },
-    { coords: [43.879411, 8.027154], nom: "Imperia", date: "29 avril 2025" },
-    { coords: [42.966040, 9.349612], nom: "Port de Centuri", date: "10 juin 2025" },
-    { coords: [42.679481, 9.299814], nom: "Port de Saint Florent", date: "11 juin 2025" }
-  ];
+  var escales = [
+    { coords: [43.879411, 8.027154], nom: "Imperia, Italie", date: "29 avril 2025" },
+    { coords: [43.815571, 7.787633], nom: "Port de Sanremo, Italie", date: "2 mai 2025" },
+    { coords: [43.780179, 7.556695], nom: "Mouillage Capo Mortola", date: "3 mai 2025" },
+    { coords: [43.777532, 7.512288], nom: "Menton, Vieux Port", date: "3 mai 2025" },
+    { coords: [43.699623, 7.310854], nom: "Villefranche-sur-Mer", date: "4 mai 2025" },
+    { coords: [43.879411, 8.027154], nom: "Imperia (retour)", date: "29 avril 2025" },
+    { coords: [43.970700, 8.166661], nom: "Mouillage Capo Mele", date: "10 mai 2025" },
+    { coords: [43.879411, 8.027154], nom: "Imperia", date: "29 avril 2025" },
+    { coords: [42.966040, 9.349612], nom: "Port de Centuri", date: "10 juin 2025" },
+    { coords: [42.679481, 9.299814], nom: "Port de Saint Florent", date: "11 juin 2025" }
+  ];
 
-  escales.forEach(function(escale) {
-    var contenu = `<b>${escale.nom}</b><br><span style="color:gray;">📅 ${escale.date}</span>`;
-    L.marker(escale.coords, { icon: iconeEscale }).addTo(map).bindPopup(contenu);
-  });
+  escales.forEach(function(escale) {
+    var contenu = "<b>" + escale.nom + "</b><br><span style='color:gray;'>Date : " + escale.date + "</span>";
+    L.marker(escale.coords, { icon: iconeEscale }).addTo(map).bindPopup(contenu);
+  });
 
-  map.fitBounds(polyline.getBounds());
+  map.fitBounds(polyline.getBounds());
 </script>
 
 </body>
