@@ -64,10 +64,17 @@
     opacity: 0.8
   }).addTo(map);
 
-  map.fitBounds(polyline.getBounds(), {
-  paddingTopLeft: [100, 200],
-  paddingBottomRight: [300, 100]
-});
+  // Adaptation du centrage selon la taille d'écran
+var isMobile = window.innerWidth < 768;
+
+var paddingOptions = isMobile
+  ? { padding: [20, 20] } // sur mobile
+  : {
+      paddingTopLeft: [100, 200],
+      paddingBottomRight: [300, 100]
+    };
+
+map.fitBounds(polyline.getBounds(), paddingOptions);
 
   var escales = [
     { coords: [43.879411, 8.027154], nom: "Imperia, Italie", date: "29 avril 2025" },
