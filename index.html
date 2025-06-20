@@ -68,7 +68,10 @@
 var isMobile = window.innerWidth < 768;
 
 var paddingOptions = isMobile
-  ? { padding: [20, 20] } // sur mobile
+  ? {
+      paddingTopLeft: [20, 150],       // plus d’espace en haut
+      paddingBottomRight: [20, 20]     // moins d’espace en bas
+    }
   : {
       paddingTopLeft: [100, 200],
       paddingBottomRight: [300, 100]
