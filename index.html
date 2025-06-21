@@ -95,11 +95,16 @@ map.fitBounds(polyline.getBounds(), paddingOptions);
     { coords: [42.729627, 9.134724], nom: "Mouillage journée plage de Ghignu", date: "14 juin 2025" },
     { coords: [42.565689, 8.762498], nom: "Port de Calvi", date: "14 juin 2025" },
     { coords: [42.349433, 8.614150], nom: "Port de Girolata", date: "19 juin 2025" },
-    { coords: [42.236466, 8.559100], nom: "Mouillage Anse San Pellegrinu, Cap Rossu Nord ", date: "20 juin 2025" },
+    { coords: [42.236466, 8.559100], nom: "Mouillage Anse San Pellegrinu, Cap Rossu Nord ", date: "20 juin 2025", image:"https://static.wixstatic.com/media/e51b28_f91d5fc026354becb9261a90a4deea97~mv2.jpg" },
   ];
 
   escales.forEach(function(escale) {
     var contenu = "<b>" + escale.nom + "</b><br><span style='color:gray;'>Date : " + escale.date + "</span>";
+    
+    if (escale.image) {
+    contenu += "<br><img src='" + escale.image + "' style='width:100%; max-width:250px; margin-top:5px; border-radius:4px;'>";
+  }
+
     L.marker(escale.coords).addTo(map).bindPopup(contenu);
   });
 
