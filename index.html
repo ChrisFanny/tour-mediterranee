@@ -103,10 +103,8 @@ map.fitBounds(polyline.getBounds(), paddingOptions);
   escales.forEach(function(escale) {
     var contenu = "<b>" + escale.nom + "</b><br><span style='color:gray;'>Date : " + escale.date + "</span>";
 
-    contenu += "<br><img src='" + escale.image + "' style='width:100%; max-width:250px; height:auto; margin-top:5px; border-radius:4px;'>";
-    
     if (escale.image) {
-    contenu += "<br><img src='" + escale.image + "' style='width:100%; max-width:250px; margin-top:5px; border-radius:4px;'>";
+    contenu += "<br><img src='" + escale.image + "' style='width:100%; max-width:250px; height:auto; margin-top:5px; border-radius:4px;'>";
   }
 
     L.marker(escale.coords).addTo(map).bindPopup(contenu);
