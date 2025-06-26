@@ -115,6 +115,16 @@ map.fitBounds(polyline.getBounds(), paddingOptions);
   }
 
     L.marker(escale.coords).addTo(map).bindPopup(contenu);
+
+     var isMobile = window.innerWidth < 768;
+  if (!isMobile) {
+    marker.on('mouseover', function () {
+      this.openPopup();
+    });
+    marker.on('mouseout', function () {
+      this.closePopup();
+    });
+  }
   });
 
 </script>
