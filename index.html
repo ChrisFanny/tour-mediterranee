@@ -112,7 +112,7 @@ map.fitBounds(polyline.getBounds(), paddingOptions);
     var contenu = "<b>" + escale.nom + "</b><br><span style='color:gray;'>Date : " + escale.date + "</span>";
 
     if (escale.image) {
-    contenu += "<br><img src='" + escale.image + "' style='width:100%; max-width:250px; height:auto; margin-top:5px; border-radius:4px;'>";
+    contenu += "<br><img src='" + escale.image + "' alt='Photo de " + escale.nom + "' style='width:100%; max-width:250px; height:auto; margin-top:5px; border-radius:4px;'>";
   }
     if (escale.lien) {
     contenu += "<br><a href='" + escale.lien + "' target='_blank' rel='noopener' style='display:inline-block; margin-top:5px; color:#2c3e50; text-decoration:underline;'>Lire l'article</a>";
