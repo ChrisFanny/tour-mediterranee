@@ -114,7 +114,7 @@ map.fitBounds(polyline.getBounds(), paddingOptions);
     contenu += "<br><a href='" + escale.lien + "' target='_blank' rel='noopener' style='display:inline-block; margin-top:5px; color:#2c3e50; text-decoration:underline;'>Lire l'article</a>";
   }
 
-    L.marker(escale.coords).addTo(map).bindPopup(contenu);
+   var marker= L.marker(escale.coords).addTo(map).bindPopup(contenu);
 
      var isMobile = window.innerWidth < 768;
   if (!isMobile) {
