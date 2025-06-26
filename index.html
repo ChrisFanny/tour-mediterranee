@@ -105,6 +105,7 @@ map.fitBounds(polyline.getBounds(), paddingOptions);
   ];
 
        var isMobile = window.innerWidth < 768;
+  var markers = {};
 
   escales.forEach(function(escale) {
     var contenu = "<b>" + escale.nom + "</b><br><span style='color:gray;'>Date : " + escale.date + "</span>";
