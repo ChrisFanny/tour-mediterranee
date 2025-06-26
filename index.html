@@ -117,6 +117,8 @@ map.fitBounds(polyline.getBounds(), paddingOptions);
   }
 
    var marker= L.marker(escale.coords).addTo(map).bindPopup(contenu);
+   markers[escale.coords.join(",")] = marker;
+
 
   if (!isMobile) {
     marker.on('mouseover', function () {
@@ -127,6 +129,20 @@ map.fitBounds(polyline.getBounds(), paddingOptions);
     });
   }
   });
+
+  map.on('zoomend moveend', function () {
+    var currentZoom = map.getZoom();
+    var bounds = map.getBounds();
+
+    escales.forEach(function(escale) {
+        var marker = markers[escale.coords.join(",")];
+        if (currentZoom >= 12 && bounds.contains(marker.getLatLng())) {
+            marker.openPopup();
+        } else if (currentZoom < 12) {
+            marker.closePopup();
+        }
+    });
+});
 
 </script>
 
