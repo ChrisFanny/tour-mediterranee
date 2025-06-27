@@ -188,9 +188,7 @@ var marker = L.marker(escale.coords, { icon: getIconByZoom(map.getZoom()) })
   map.on('zoomend moveend', function () {
     var currentZoom = map.getZoom();
     var bounds = map.getBounds();
-  });
-}
-
+  
     escales.forEach(function(escale) {
         var marker = markers[escale.coords.join(",")];
         if (currentZoom >= 11 && bounds.contains(marker.getLatLng())) {
