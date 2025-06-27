@@ -66,13 +66,13 @@
 var map = L.map('map').setView([38.5, 15.0], 5);
 
 function getIconByZoom(zoom) {
-  const size = Math.max(20, Math.min(zoom * 5, 50)); // Entre 20 et 50 px
+  const size = Math.max(25, Math.min(zoom * 5, 50)); // Ajuste entre 25 et 50px
 
-  return L.divIcon({
-    html: `<img src="https://raw.githubusercontent.com/ChrisFanny/andyboat-icons/main/icon.svg" 
-               style="width:${size}px; height:${size}px;">`,
+  return L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/ChrisFanny/andyboat-icons/main/icon.svg',
     iconSize: [size, size],
-    className: '' // Supprime les classes CSS par défaut de Leaflet
+    iconAnchor: [size / 2, size],
+    popupAnchor: [0, -size / 2]
   });
 }
 
