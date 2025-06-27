@@ -73,11 +73,21 @@ var map = L.map('map').setView([38.5, 15.0], 5);
 function getIconByZoom(zoom) {
   const size = Math.max(25, Math.min(zoom * 5, 50)); // Ajuste entre 25 et 50px
 
+  const svgIcon = `
+  <svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 500 500">
+    <g transform="translate(0,500) scale(0.1,-0.1)" fill="#0077b6" stroke="none">
+      <path d="M2455 4989 c-794 -52 -1560 -416 -2100 -1014 -820 -902 -1047 -2187 -588 -3324 255 -634 711 -1172 1303 -1522 455 -270 962 -420 1510 -443 593 -26 1131 98 1675 384 331 173 589 371 870 672 440 472 724 1023 858 1668 52 245 71 413 71 675 0 532 -117 1021 -360 1490 -241 464 -601 885 -1029 1194 -538 384 -1177 592 -1835 620 -91 4 -202 3 -275 0z m715 -854 c493 -70 909 -254 1296 -570 92 -76 302 -289 379 -386 438 -547 637 -1259 551 -1956 -80 -661 -375 -1261 -851 -1721 -450 -436 -973 -696 -1575 -787 -176 -26 -566 -31 -740 -10 -567 69 -1047 269 -1480 623 -133 108 -377 351 -485 484 -359 440 -578 958 -635 1511 -14 138 -14 475 0 610 83 806 489 1501 1145 1975 422 305 940 503 1455 547 119 10 385 4 540 -10z"/>
+      <path d="M2460 3815 l0 -675 -237 -2 -238 -3 -3 -232 -2 -233 240 0 240 0 0 -817 c0 -812 0 -818 22 -915 67 -301 238 -497 518 -596 239 -85 534 -80 855 15 l100 29 3 243 2 243 -142 -6 c-175 -8 -306 8 -388 48 -94 47 -156 123 -180 220 -18 73 -20 128 -20 805 l0 725 395 5 395 5 3 233 2 232 -397 3 -398 2 0 675 0 675 -315 0 -315 0 0 -675z"/>
+    </g>
+  </svg>
+  `;
+
   return L.divIcon({
-    html: `<img src="https://raw.githubusercontent.com/ChrisFanny/andyboat-icons/main/icon.svg" 
-               style="width:${size}px; height:${size}px;">`,
+    html: svgIcon,
     iconSize: [size, size],
-    className: ''  // Supprime les styles par défaut de Leaflet
+    className: '',
+    iconAnchor: [size/2, size],
+    popupAnchor: [0, -size/2]
   });
 }
 
