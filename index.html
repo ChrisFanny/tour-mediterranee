@@ -162,6 +162,16 @@ map.fitBounds(polyline.getBounds(), paddingOptions);
     });
   }
   });
+  
+   map.on('zoomend', function() {
+    var newZoom = map.getZoom();
+    escales.forEach(function(escale) {
+      var marker = markers[escale.coords.join(",")];
+      if (marker) {
+        marker.setIcon(getIconByZoom(newZoom));
+      }
+    });
+  });
 
   map.on('zoomend moveend', function () {
     var currentZoom = map.getZoom();
