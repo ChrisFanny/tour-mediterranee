@@ -149,7 +149,9 @@ map.fitBounds(polyline.getBounds(), paddingOptions);
     contenu += "<br><a href='" + escale.lien + "' target='_blank' rel='noopener' style='display:inline-block; margin-top:5px; color:#2c3e50; text-decoration:underline;'>Lire l'article</a>";
   }
 
-   var marker= L.marker(escale.coords).addTo(map).bindPopup(contenu);
+var marker = L.marker(escale.coords, { icon: getIconByZoom(map.getZoom()) })
+  .addTo(map)
+  .bindPopup(contenu);
    markers[escale.coords.join(",")] = marker;
 
 
@@ -176,6 +178,16 @@ map.fitBounds(polyline.getBounds(), paddingOptions);
   map.on('zoomend moveend', function () {
     var currentZoom = map.getZoom();
     var bounds = map.getBounds();
+
+    function getIconByZoom(zoom) {
+  const size = Math.max(20, Math.min(zoom * 5, 50)); // Taille entre 20px et 50px
+  return L.icon({
+    iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png', // Remplace par ton image si tu veux
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size],
+    popupAnchor: [0, -size / 2]
+  });
+}
 
     escales.forEach(function(escale) {
         var marker = markers[escale.coords.join(",")];
