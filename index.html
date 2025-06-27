@@ -34,31 +34,43 @@
   border: 2px solid #ddd;
       }
     
-       .leaflet-popup-content {
-      font-family: 'Arial', sans-serif;
-      font-size: 14px;
-      color: #333;
-    }
+      .leaflet-popup-content-wrapper {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
 
-    .leaflet-popup-content img {
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
+  .leaflet-popup-tip {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
 
-    .leaflet-popup-content b {
-      color: #2c3e50;
-      font-size: 16px;
-    }
-    
-    .leaflet-marker-icon {
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      cursor: pointer;
-    }
+  .leaflet-popup-content {
+    opacity: 1;
+  }
 
-    .leaflet-marker-icon:hover {
-      transform: scale(1.2);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
+  .leaflet-popup-content {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .leaflet-popup-content img {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .leaflet-popup-content b {
+    color: #2c3e50;
+    font-size: 16px;
+  }
+
+  .leaflet-marker-icon {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+  }
+
+  .leaflet-marker-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
   </style>
 </head>
 <body>
