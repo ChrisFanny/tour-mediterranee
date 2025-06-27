@@ -166,20 +166,6 @@ map.fitBounds(polyline.getBounds(), paddingOptions);
   }
   });
 
-  map.on('zoomend moveend', function () {
-    var currentZoom = map.getZoom();
-    var bounds = map.getBounds();
-
-    escales.forEach(function(escale) {
-        var marker = markers[escale.coords.join(",")];
-        if (currentZoom >= 12 && bounds.contains(marker.getLatLng())) {
-            marker.openPopup();
-        } else if (currentZoom < 12) {
-            marker.closePopup();
-        }
-    });
-});
-
 </script>
 
 </body>
