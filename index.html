@@ -35,11 +35,11 @@
       }
     
       .leaflet-popup-content-wrapper {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.9);
   }
 
   .leaflet-popup-tip {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.9);
   }
 
   .leaflet-popup-content {
@@ -68,6 +68,11 @@
     transform: scale(1.2);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   }
+
+    .leaflet-popup-content a:hover {
+  color: #0077b6;
+  text-decoration: underline;
+}
   </style>
 </head>
 <body>
@@ -168,15 +173,6 @@ map.fitBounds(polyline.getBounds(), paddingOptions);
    var marker= L.marker(escale.coords).addTo(map).bindPopup(contenu);
    markers[escale.coords.join(",")] = marker;
 
-
-  if (!isMobile) {
-    marker.on('mouseover', function () {
-      this.openPopup();
-    });
-    marker.on('mouseout', function () {
-      this.closePopup();
-    });
-  }
   });
 
 </script>
