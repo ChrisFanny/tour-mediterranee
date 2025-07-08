@@ -184,6 +184,9 @@ map.fitBounds(polyline.getBounds(), paddingOptions);
     if (escale.lien) {
     contenu += "<br><a href='" + escale.lien + "' target='_blank' rel='noopener' style='display:inline-block; margin-top:5px; color:#2c3e50; text-decoration:underline;'>Lire l'article</a>";
   }
+    if (escale.galerie) {
+  contenu += "<br><a href='" + escale.galerie + "' target='_blank' rel='noopener' style='display:inline-block; margin-top:5px; color:#2c3e50; text-decoration:underline;'>Voir les photos</a>";
+}
 
    var marker= L.marker(escale.coords).addTo(map).bindPopup(contenu);
    markers[escale.coords.join(",")] = marker;
