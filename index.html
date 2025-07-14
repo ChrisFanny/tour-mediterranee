@@ -152,30 +152,26 @@ var paddingOptions = isMobile
 
 map.fitBounds(polyline.getBounds(), paddingOptions);
 
- // Marqueur vidéo 1 — premier tiers de la route Ventotene-Lipari
-L.marker([39.987, 13.90], {
-    icon: L.icon({
-        iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-    })
-}).addTo(map).bindPopup(`
+ // Icône personnalisée verte pour vidéos
+const videoIcon = L.icon({
+    iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x-green.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+    shadowSize: [41, 41]
+});
+
+// Marqueur vidéo 1 — premier tiers exact
+L.marker([40.023650, 13.943581], { icon: videoIcon }).addTo(map).bindPopup(`
   <video width="300" controls>
     <source src="https://video.wixstatic.com/video/e51b28_a5b12c4ad7d64a6da0adc4da4da6764f/1080p/mp4/file.mp4" type="video/mp4">
     Votre navigateur ne supporte pas la vidéo HTML5.
   </video>
 `);
 
-// Marqueur vidéo 2 — deuxième tiers de la route Ventotene-Lipari
-L.marker([39.2, 14.45], {
-    icon: L.icon({
-        iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-    })
-}).addTo(map).bindPopup(`
+// Marqueur vidéo 2 — deuxième tiers exact
+L.marker([39.250225, 14.452987], { icon: videoIcon }).addTo(map).bindPopup(`
   <video width="300" controls>
     <source src="https://video.wixstatic.com/video/e51b28_a98c9cc3a557407ba4f317fb7ee5059b/480p/mp4/file.mp4" type="video/mp4">
     Votre navigateur ne supporte pas la vidéo HTML5.
