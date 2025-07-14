@@ -152,6 +152,30 @@ var paddingOptions = isMobile
 
 map.fitBounds(polyline.getBounds(), paddingOptions);
 
+  // Ligne Ventotene → Lipari avec vidéos au 1er et 2e tiers
+const routeVentoteneLipari = L.polyline([
+    [40.797612, 13.436408], // Ventotene
+    [38.476799, 14.962392]  // Lipari
+], { color: 'red', weight: 4, opacity: 0.8 }).addTo(map);
+
+// Marqueur invisible — premier tiers
+const point1VentLip = L.marker([39.987, 13.90], { opacity: 0.01 }).addTo(map);
+point1VentLip.bindPopup(`
+  <video width="300" controls>
+    <source src="https://video.wixstatic.com/video/e51b28_a5b12c4ad7d64a6da0adc4da4da6764f/1080p/mp4/file.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo HTML5.
+  </video>
+`);
+
+// Marqueur invisible — deuxième tiers
+const point2VentLip = L.marker([39.2, 14.45], { opacity: 0.01 }).addTo(map);
+point2VentLip.bindPopup(`
+  <video width="300" controls>
+    <source src="https://video.wixstatic.com/video/e51b28_a98c9cc3a557407ba4f317fb7ee5059b/480p/mp4/file.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo HTML5.
+  </video>
+`);
+
   var escales = [
     { coords: [43.879411, 8.027154], nom: "Imperia, Italie", date: "29 avril 2025", image:"https://static.wixstatic.com/media/e51b28_3d3d39a1ebcc410a8536746cdd50d835~mv2.jpeg" },
     { coords: [43.815571, 7.787633], nom: "Port de Sanremo, Italie", date: "2 mai 2025", image:"https://static.wixstatic.com/media/e51b28_e1f38c6852844ef78efffc7548ae5a2f~mv2.jpg" },
