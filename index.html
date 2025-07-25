@@ -159,10 +159,12 @@ var paddingOptions = isMobile
 map.fitBounds(polyline.getBounds(), paddingOptions);
 
 const videoIcon = L.icon({
-    iconUrl: 'https://static.wixstatic.com/media/e51b28_xxxxxxxx_camera.png',
-    iconSize: [32, 32],       // selon la taille de ton PNG
-    iconAnchor: [16, 32],     // centre horizontal, bas vertical
-    popupAnchor: [0, -32],    // décalage du popup vers le haut
+  iconUrl: 'https://static.wixstatic.com/media/e51b28_9279e2cef7fb4a60ba49a0c04764fbdc~mv2.png',
+  iconSize: [32, 32],       // adapte la taille si nécessaire
+  iconAnchor: [16, 32],     // centre horizontal, bas vertical
+  popupAnchor: [0, -32],    // pour bien positionner le popup
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+  shadowSize: [41, 41]
 });
 
 // Marqueur vidéo 1 — premier tiers exact
