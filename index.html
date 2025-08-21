@@ -146,7 +146,7 @@
     [39.774027, 19.968338], [39.742686, 19.947395], [39.662998, 19.866028], [39.663584, 19.861822], 
     [39.665349, 19.859719], [39.645469, 19.878302], [39.625111, 19.937525], [39.621718, 19.930100], 
     [39.621718, 19.926624], [39.467334, 20.076313], [39.366089, 20.163002], [39.437333, 20.095066], 
-    [39.340000, 20.145183],[39.199319, 20.215187], [39.183861, 20.203514], [39.181844, 20.203021],
+    [39.340000, 20.145183], [39.199319, 20.215187], [39.183861, 20.203514], [39.181844, 20.203021],
   ];
   var polyline = L.polyline(route, {
     color: 'red',
@@ -208,6 +208,14 @@ Votre navigateur ne supporte pas la vidéo HTML5.
   <b>Magic Point</b><br>
   <video width="300" controls style="margin-top: 5px;">
     <source src="https://video.wixstatic.com/video/e51b28_c8a189b7d54e4e2797b2bfda852c63bf/1080p/mp4/file.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo HTML5.
+  </video>
+`);
+
+   L.marker([39.366089, 20.163002], { icon: videoIcon }).addTo(map).bindPopup(`
+  <b>Sailing</b><br>
+  <video width="300" controls style="margin-top: 5px;">
+    <source src="https://video.wixstatic.com/video/e51b28_bdd1da7c3af649aebf12d2097a327736/480p/mp4/file.mp4">
     Votre navigateur ne supporte pas la vidéo HTML5.
   </video>
 `);
