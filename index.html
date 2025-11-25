@@ -201,7 +201,12 @@
     [42.067369, 11.809697], [42.405103, 11.212703], [42.402115, 11.211099], [42.401760, 11.210145],
     [42.402115, 11.211099], [42.405103, 11.212703], [42.403734, 11.215390], [42.379133, 11.216895],
     [42.359123, 11.194564], [42.356372, 11.152585], [42.392877, 11.071326], [42.753432, 10.425559],
-    [42.762731, 10.397525], [42.764404, 10.397397], [42.762731, 10.397525],
+    [42.762731, 10.397525], [42.764404, 10.397397], [42.762731, 10.397525], [42.761358, 10.402118],
+    [42.771663, 10.439349], [42.845501, 10.458409], [43.541819, 10.252998], [44.019206, 9.7996670], 
+    [44.292924, 9.2004890], [44.333291, 9.0771510], [44.278064, 8.6002060], [44.174922, 8.4126670], 
+    [44.136150, 8.2708120], [44.134343, 8.2697610], [44.134614, 8.2689480], [44.134343, 8.2697610],
+    [44.136150, 8.2708120], [44.135750, 8.2727440], [44.113634, 8.2811450], [44.024411, 8.2368730], 
+    [],
   ];
   var polyline = L.polyline(route, {
     color: 'red',
@@ -276,12 +281,12 @@ Votre navigateur ne supporte pas la vidéo HTML5.
 `);
 
   var escales = [
-    { coords: [43.879411, 8.027154], nom: "Imperia, Italie", date: "29 avril 2025", image:"https://static.wixstatic.com/media/e51b28_3d3d39a1ebcc410a8536746cdd50d835~mv2.jpeg" },
-    { coords: [43.815571, 7.787633], nom: "Port de Sanremo, Italie", date: "2 mai 2025", image:"https://static.wixstatic.com/media/e51b28_e1f38c6852844ef78efffc7548ae5a2f~mv2.jpg" },
-    { coords: [43.780179, 7.556695], nom: "Mouillage Capo Mortola", date: "3 mai 2025", image:"https://static.wixstatic.com/media/e51b28_d9b9eca3b13941a480625447540fb85f~mv2.jpeg" },
+    { coords: [43.879411, 8.027154], nom: "Imperia, Ligurie", date: "29 avril 2025", image:"https://static.wixstatic.com/media/e51b28_3d3d39a1ebcc410a8536746cdd50d835~mv2.jpeg" },
+    { coords: [43.815571, 7.787633], nom: "Port de Sanremo, Ligurie", date: "2 mai 2025", image:"https://static.wixstatic.com/media/e51b28_e1f38c6852844ef78efffc7548ae5a2f~mv2.jpg" },
+    { coords: [43.780179, 7.556695], nom: "Mouillage Capo Mortola, Ligurie", date: "3 mai 2025", image:"https://static.wixstatic.com/media/e51b28_d9b9eca3b13941a480625447540fb85f~mv2.jpeg" },
     { coords: [43.777532, 7.512288], nom: "Menton, Vieux Port", date: "3 mai 2025", image:"https://static.wixstatic.com/media/e51b28_64aa35827fc84f1fb5ebb058c9df3857~mv2.jpg" },
     { coords: [43.699623, 7.310854], nom: "Villefranche-sur-Mer", date: "4 mai 2025", image:"https://static.wixstatic.com/media/e51b28_59a9845390e948ea84f115d7daff3471~mv2.jpeg", lien:"https://www.andyboat.com/post/premières-escales"},
-    { coords: [43.970700, 8.166661], nom: "Mouillage Capo Mele", date: "10 mai 2025", image:"https://static.wixstatic.com/media/e51b28_a98e80caa530442bb828afc7cad3beab~mv2.jpg" },
+    { coords: [43.970700, 8.166661], nom: "Mouillage Capo Mele, Ligurie", date: "10 mai 2025", image:"https://static.wixstatic.com/media/e51b28_a98e80caa530442bb828afc7cad3beab~mv2.jpg" },
     { coords: [42.966040, 9.349612], nom: "Port de Centuri", date: "10 juin 2025", image:"https://static.wixstatic.com/media/e51b28_10ab574495214984ac4bb73c24ae73bf~mv2.jpg", lien:"https://www.andyboat.com/post/centuri" },
     { coords: [42.679481, 9.299814], nom: "Port de Saint Florent", date: "11 juin 2025", image:"https://static.wixstatic.com/media/e51b28_cf7f61ed1919498e8e52475d0e61bcbd~mv2.jpg", lien:"https://www.andyboat.com/post/saint-florent" },
     { coords: [42.729627, 9.134724], nom: "Mouillage journée plage de Ghignu", date: "14 juin 2025", image:"https://static.wixstatic.com/media/e51b28_4326c7a1d6c6469a9ef50f3424398c9c~mv2.jpg" },
@@ -293,7 +298,7 @@ Votre navigateur ne supporte pas la vidéo HTML5.
     { coords: [41.676804, 8.901093], nom: "Port de Propriano", date: "26 juin 2025", image:"https://static.wixstatic.com/media/e51b28_bf763c1ef79546aca1f2cd473a5e7d37~mv2.jpeg", lien:"https://www.andyboat.com/post/propriano", galerie:"https://andyboat.com/gallerie#photos-propriano" },
     { coords: [41.494190, 8.932528], nom: "Mouillage de Roccapina", date: "29 juin 2025", image:"https://static.wixstatic.com/media/e51b28_dd4a90b0a895487bac5b3d257d6231d2~mv2.jpeg", lien:"https://www.andyboat.com/post/rocapina" },
     { coords: [41.388702, 9.148393], nom: "Port de Bonifacio", date: "premier juillet 2025", image:"https://static.wixstatic.com/media/e51b28_11f1f6729a9846409d5a8d0a9d66d240~mv2.jpeg", lien:"https://www.andyboat.com/post/bonifacio" },
-    { coords: [41.257642, 9.427600], nom: "Porto Massimo", date: "3 juillet 2025", image:"https://static.wixstatic.com/media/e51b28_0fa1ed032d934d7688f44e979195c1d7~mv2.jpeg", lien: "https://www.andyboat.com/post/massimo"},
+    { coords: [41.257642, 9.427600], nom: "Porto Massimo, Italie, Archipel de La Maddalena", date: "3 juillet 2025", image:"https://static.wixstatic.com/media/e51b28_0fa1ed032d934d7688f44e979195c1d7~mv2.jpeg", lien: "https://www.andyboat.com/post/massimo"},
     { coords: [40.928533, 12.859250], nom: "Mouillage Cala Brigantina, Palmarola (îles Pontines)", date: "5 juillet 2025", image:"https://static.wixstatic.com/media/e51b28_352396c9728a475e8ca899be67cfe638~mv2.jpeg", lien: "https://www.andyboat.com/post/palmarola"},
     { coords: [40.899416, 12.961783], nom: "Pontile Porzio, Port de Ponza (îles Pontines)", date: "6 juillet 2025", image:"https://static.wixstatic.com/media/e51b28_5e975c586f094be086b954cf7b2850ac~mv2.jpeg", lien: "https://www.andyboat.com/post/ponza"},
     { coords: [40.797076, 13.434176], nom: "Porto Vecchio Ventotene (îles Pontines)", date: "9 juillet 2025", image:"https://static.wixstatic.com/media/e51b28_7a23f7fcdf0942d7a6fcffc194a74051~mv2.jpeg", lien:"https://www.andyboat.com/post/ventotene", galerie: "https://andyboat.com/copie-de-galerie-photos#ventot%C3%A8ne"},
@@ -338,6 +343,7 @@ Votre navigateur ne supporte pas la vidéo HTML5.
     { coords: [42.064570, 11.810867], nom: "Port de Riva Di Traiano, Latium", date: "13 novembre 2025", image: "https://static.wixstatic.com/media/e51b28_e980e334f1f74f58b6a302b250857115~mv2.jpeg"},
     { coords: [42.401760, 11.210145], nom: "Marina Cala Galera à Porto Ercole, Toscane", date: "14 novembre 2025", image: "https://static.wixstatic.com/media/e51b28_f0ac5c671deb40e1a2e0e7786afc5ea8~mv2.jpeg"},
     { coords: [42.764404, 10.397397], nom: "Marina Porto Azzurro, île d'Elbe", date: "19 novembre 2025", image: "https://static.wixstatic.com/media/e51b28_53fb653624194b43b4140074a720b7d0~mv2.jpeg"},
+    { coords: [44.134614, 8.2689480], nom: "Marina di Loano, Ligurie", date: "24 novembre 2025", image: "https://static.wixstatic.com/media/e51b28_e914a258f6cf469ea35704e65e9d0629~mv2.jpeg"},
   ];
 
        var isMobile = window.innerWidth < 768;
